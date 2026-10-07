@@ -1,0 +1,8 @@
+{
+  "name": "AutoParts India",
+  "description": "AutoParts India — Buy and sell new and used auto parts across India.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,9 +1,9 @@
-AutoParts India reference website
-----------------------------------
-Upload the contents of this folder to GitHub Pages (main branch, root folder).
+AutoParts India Marketplace Website
+------------------------------------
+Upload the contents of this repository to GitHub / GitHub Pages (main branch, root folder).
 
-APK download:
-https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk?download=true
+APK File:
+Auto_Parts_India.apk (Included in repository root)
 
 Support:
 autopartsindia7@gmail.com

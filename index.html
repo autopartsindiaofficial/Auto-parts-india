@@ -966,6 +966,24 @@ footer {
 </head>
 <body>
 
+<!-- FACEBOOK / INSTAGRAM IN-APP BROWSER ALERT (Appears only when opened inside FB app) -->
+<div id="fb-inapp-banner" style="display:none; background:#fffbeb; border-bottom:2px solid #f59e0b; color:#92400e; padding:12px 18px; font-size:14px; font-weight:700; line-height:1.5; position:sticky; top:0; z-index:9999; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+  <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span style="font-size:22px;">⚠️</span>
+      <div>
+        <div style="color:#78350f;">Facebook Browser Notice:</div>
+        <div style="font-size:13px; font-weight:600; color:#92400e;">
+          To download APK, tap <b>⋮ (Top Right)</b> &rarr; <b>"Open in Chrome / Open in external browser"</b>
+        </div>
+      </div>
+    </div>
+    <button onclick="openInChrome()" style="background:#075bdc; color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:800; font-size:13px; cursor:pointer; box-shadow:0 2px 8px rgba(7,91,220,0.3);">
+      🚀 Open in Chrome to Download
+    </button>
+  </div>
+</div>
+
 <!-- HEADER & NAVIGATION -->
 <header id="site-header">
   <div class="container nav-bar">
@@ -1627,18 +1645,41 @@ function closeMobileNav() {
   if (mobileNavDrawer) mobileNavDrawer.classList.remove('open');
 }
 
-// Smart download adapter for mobile testing:
-// In AI Studio preview (*.run.app), Google Frontend redirects binary downloads to __cookie_check.html (creating .apk.html).
-// This uses direct CDN stream in preview so mobile downloads succeed immediately with the real APK.
-// When pushed to GitHub / GitHub Pages, it automatically uses the repository's local Auto_Parts_India.apk!
-function initDownloadLinks() {
+// Smart download adapter for mobile and in-app browsers (Facebook, Instagram):
+function getApkDownloadUrl() {
   const isAiStudio = window.location.hostname.includes('run.app') || window.location.hostname.includes('google');
-  const apkUrl = isAiStudio 
+  return isAiStudio 
     ? 'https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk?download=true'
-    : 'Auto_Parts_India.apk';
+    : new URL('Auto_Parts_India.apk', window.location.href).href;
+}
+
+function openInChrome(url) {
+  const target = url || getApkDownloadUrl();
+  const cleanUrl = target.replace(/^https?:\/\//, '');
+  // Break out of Facebook In-App Browser into Google Chrome on Android
+  const chromeIntent = `intent://${cleanUrl}#Intent;scheme=https;package=com.android.chrome;end`;
+  window.location.href = chromeIntent;
+}
+
+function initDownloadLinks() {
+  const ua = navigator.userAgent || '';
+  const isFb = /FBAN|FBAV|Instagram|FB_IAB/i.test(ua);
+
+  if (isFb) {
+    const banner = document.getElementById('fb-inapp-banner');
+    if (banner) banner.style.display = 'block';
+  }
+
+  const apkUrl = getApkDownloadUrl();
 
   document.querySelectorAll('a[download]').forEach(link => {
     link.href = apkUrl;
+    link.addEventListener('click', function(e) {
+      if (isFb) {
+        e.preventDefault();
+        openInChrome(apkUrl);
+      }
+    });
   });
 }
 initDownloadLinks();

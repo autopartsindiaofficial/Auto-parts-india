@@ -966,24 +966,6 @@ footer {
 </head>
 <body>
 
-<!-- FACEBOOK / INSTAGRAM IN-APP BROWSER ALERT (Appears only when opened inside FB app) -->
-<div id="fb-inapp-banner" style="display:none; background:#fffbeb; border-bottom:2px solid #f59e0b; color:#92400e; padding:12px 18px; font-size:14px; font-weight:700; line-height:1.5; position:sticky; top:0; z-index:9999; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-  <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-    <div style="display:flex; align-items:center; gap:10px;">
-      <span style="font-size:22px;">⚠️</span>
-      <div>
-        <div style="color:#78350f;">Facebook Browser Notice:</div>
-        <div style="font-size:13px; font-weight:600; color:#92400e;">
-          To download APK, tap <b>⋮ (Top Right)</b> &rarr; <b>"Open in Chrome / Open in external browser"</b>
-        </div>
-      </div>
-    </div>
-    <button onclick="openInChrome()" style="background:#075bdc; color:#fff; border:none; padding:8px 16px; border-radius:8px; font-weight:800; font-size:13px; cursor:pointer; box-shadow:0 2px 8px rgba(7,91,220,0.3);">
-      🚀 Open in Chrome to Download
-    </button>
-  </div>
-</div>
-
 <!-- HEADER & NAVIGATION -->
 <header id="site-header">
   <div class="container nav-bar">
@@ -1661,11 +1643,6 @@ function openInChrome(url) {
 function initDownloadLinks() {
   const ua = navigator.userAgent || '';
   const isFb = /FBAN|FBAV|Instagram|FB_IAB/i.test(ua);
-
-  if (isFb) {
-    const banner = document.getElementById('fb-inapp-banner');
-    if (banner) banner.style.display = 'block';
-  }
 
   const apkUrl = getApkDownloadUrl();
 

@@ -3,35 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="AutoParts India — Buy and sell new and used auto parts across India. India’s Trusted Auto Parts Marketplace.">
-<title>AutoParts India | New & Used Auto Parts Marketplace</title>
+<meta name="description" content="AutoParts India — Buy & Sell New and Used Auto Parts & Damaged Vehicles Across India. India’s Trusted Automotive Marketplace.">
+<title>AutoParts India | Auto Parts & Damaged Vehicle Marketplace</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --blue: #075bdc;
-  --blue-hover: #0548b2;
-  --navy: #06284f;
-  --navy-dark: #041a35;
+  --blue: #0066ff;
+  --blue-hover: #0052cc;
+  --navy: #0c2340;
+  --navy-dark: #06182e;
+  --navy-hero: #052047;
   --orange: #ff7a00;
-  --orange-gradient: linear-gradient(135deg, #ff8a00 0%, #ff6e00 50%, #eb5c00 100%);
-  --red: #d21d1d;
-  --text: #0f2440;
-  --text-muted: #5e7087;
-  --bg-soft: #f4f8fd;
-  --border: #dbe7f5;
+  --orange-light: #ff9433;
+  --green: #10b981;
+  --text-dark: #0c2340;
+  --text-muted: #64748b;
+  --bg-light: #f8fafd;
+  --bg-card: #ffffff;
+  --border-light: #eef2f7;
+  --shadow-sm: 0 4px 14px rgba(12, 35, 64, 0.04);
+  --shadow-md: 0 8px 24px rgba(12, 35, 64, 0.08);
+  --shadow-lg: 0 16px 38px rgba(12, 35, 64, 0.12);
   --radius: 16px;
-  --radius-lg: 20px;
-  --shadow-card: 0 10px 30px rgba(6, 40, 79, 0.08);
-  --shadow-hover: 0 20px 45px rgba(6, 40, 79, 0.14);
+  --radius-lg: 22px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  color: var(--text);
+  color: var(--text-dark);
   background: #ffffff;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -54,19 +57,17 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid #e5effa;
-  box-shadow: 0 2px 12px rgba(6, 40, 79, 0.04);
+  background: #ffffff;
+  border-bottom: 1px solid #edf2f7;
+  box-shadow: 0 2px 10px rgba(12, 35, 64, 0.03);
 }
 
 .nav-bar {
-  height: 84px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
 }
 
 .logo-wrap {
@@ -75,7 +76,7 @@ header {
 }
 
 .logo-img {
-  height: 58px;
+  height: 44px;
   width: auto;
   object-fit: contain;
 }
@@ -83,15 +84,13 @@ header {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
 }
 
 .nav-links a {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14.5px;
   color: var(--navy);
-  padding: 8px 0;
-  position: relative;
   transition: color 0.2s;
 }
 
@@ -100,867 +99,808 @@ header {
   color: var(--blue);
 }
 
-.nav-links a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0px;
-  height: 3px;
-  border-radius: 3px;
-  background: var(--blue);
-}
-
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
-/* Language Switcher */
 .lang-toggle {
-  display: inline-flex;
-  align-items: center;
-  background: #edf4fe;
-  border: 1px solid #cfe0f5;
+  display: flex;
+  background: #f0f4f9;
   border-radius: 999px;
   padding: 3px;
-  font-size: 13px;
-  font-weight: 700;
+  gap: 2px;
 }
 
 .lang-btn {
-  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
   border-radius: 999px;
-  color: var(--text-muted);
+  color: #4b6382;
   transition: all 0.2s;
 }
 
 .lang-btn.active {
-  background: var(--blue);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(7, 91, 220, 0.3);
+  background: #ffffff;
+  color: var(--navy);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .btn-nav-download {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   background: var(--blue);
-  color: #fff;
-  font-size: 14.5px;
+  color: #ffffff;
   font-weight: 800;
-  padding: 11px 20px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(7, 91, 220, 0.26);
-  transition: all 0.2s ease;
+  font-size: 13.5px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);
+  transition: all 0.2s;
 }
 
 .btn-nav-download:hover {
   background: var(--blue-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(7, 91, 220, 0.35);
+  transform: translateY(-1px);
 }
 
 .menu-toggle {
   display: none;
   font-size: 26px;
   color: var(--navy);
-  padding: 6px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
 }
 
-/* Mobile Nav Drawer */
 .mobile-nav {
   display: none;
-  background: #ffffff;
-  border-bottom: 2px solid #e5effa;
-  box-shadow: 0 16px 30px rgba(0,0,0,0.1);
-  padding: 18px 24px 24px;
   flex-direction: column;
-  gap: 14px;
+  background: #ffffff;
+  border-top: 1px solid #edf2f7;
+  padding: 16px 20px;
+  gap: 12px;
 }
 
 .mobile-nav.open { display: flex; }
 .mobile-nav a {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   padding: 10px 0;
   border-bottom: 1px solid #f1f5f9;
   color: var(--navy);
 }
 
-/* ================= HERO SECTION ================= */
+/* ================= HERO SECTION (MATCHING USER MOCKUP EXACTLY) ================= */
 .hero {
-  background: linear-gradient(125deg, #05244d 0%, #074bb8 45%, #0861e6 100%);
-  color: #ffffff;
   position: relative;
+  background: linear-gradient(135deg, #051e44 0%, #07316b 40%, #0a4696 100%);
+  color: #ffffff;
   overflow: hidden;
-  padding: 50px 0 70px;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: -150px;
-  right: -100px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 122, 0, 0.12) 0%, transparent 70%);
-  pointer-events: none;
+  padding: 34px 0 42px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 40px;
-  position: relative;
-  z-index: 2;
+  gap: 24px;
 }
 
-.eyebrow {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #38bdf8;
-  margin-bottom: 16px;
-  background: rgba(56, 189, 248, 0.14);
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  padding: 6px 16px;
-  border-radius: 999px;
-  backdrop-filter: blur(6px);
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 h1.hero-title {
-  font-size: clamp(38px, 4.2vw, 62px);
-  line-height: 1.05;
+  font-size: clamp(28px, 3.8vw, 48px);
+  line-height: 1.15;
   font-weight: 900;
-  letter-spacing: -0.03em;
-  margin-bottom: 18px;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
 }
 
-h1.hero-title span {
+h1.hero-title .hero-orange {
   color: var(--orange);
 }
 
 .hero-subtitle {
-  font-size: 19px;
-  line-height: 1.5;
-  color: #e5f0ff;
-  max-width: 580px;
-  margin-bottom: 26px;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 18px;
   font-weight: 500;
+  max-width: 460px;
 }
 
-/* Feature Badges */
-.pills-row {
+/* 3 Feature Badges */
+.hero-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 8px;
+  margin-bottom: 22px;
 }
 
-.pill-item {
+.hero-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 8px 16px;
+  background: #ffffff;
+  color: #0b418a;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 6px 14px;
   border-radius: 999px;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
+.pill-icon-svg {
+  width: 14px;
+  height: 14px;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+/* Hero Action Buttons */
 .hero-ctas {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-}
-
-.btn-primary-lg {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: #ffffff;
-  color: var(--blue);
-  font-size: 16px;
-  font-weight: 800;
-  padding: 16px 28px;
-  border-radius: 12px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
-  transition: all 0.25s ease;
-}
-
-.btn-primary-lg:hover {
-  transform: translateY(-2px);
-  background: #f7fbff;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
-}
-
-.btn-outline-lg {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: rgba(6, 40, 79, 0.35);
-  color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
-  font-size: 16px;
-  font-weight: 700;
-  padding: 15px 26px;
-  border-radius: 12px;
-  backdrop-filter: blur(8px);
-  transition: all 0.25s ease;
-}
-
-.btn-outline-lg:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: #ffffff;
-  transform: translateY(-2px);
-}
-
-.micro-copy {
-  font-size: 13px;
-  color: #b9d8ff;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Hero Right: Live Interactive Phone Mockup */
-.hero-mockup-wrap {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.phone-device {
-  width: min(340px, 100%);
-  background: #0b1526;
-  border: 7px solid #1a2a44;
-  border-radius: 40px;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255,255,255,0.1);
-  overflow: hidden;
-  position: relative;
-  transform: rotate(1deg);
-  transition: transform 0.3s ease;
-}
-
-.phone-device:hover {
-  transform: rotate(0deg) scale(1.02);
-}
-
-.phone-notch {
-  width: 120px;
-  height: 18px;
-  background: #1a2a44;
-  margin: 0 auto;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-}
-
-.phone-screen {
-  background: #f4f7fb;
-  min-height: 510px;
-  display: flex;
-  flex-direction: column;
-}
-
-.phone-header {
-  background: var(--blue);
-  color: #fff;
-  padding: 16px 16px 20px;
-}
-
-.phone-header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.phone-brand {
-  font-size: 18px;
-  font-weight: 900;
-  letter-spacing: -0.5px;
-}
-
-.phone-location {
-  font-size: 11px;
-  font-weight: 700;
-  background: rgba(255,255,255,0.22);
-  padding: 4px 8px;
-  border-radius: 999px;
-}
-
-.phone-search-bar {
-  background: #ffffff;
-  color: #6d8299;
-  border-radius: 10px;
-  padding: 9px 12px;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.phone-content {
-  padding: 14px 12px;
-  display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
+  max-width: 320px;
 }
 
-.phone-banner {
-  background: linear-gradient(135deg, #ff8a00, #ff5e00);
-  color: #fff;
-  border-radius: 12px;
-  padding: 10px 14px;
+.btn-hero-primary {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.phone-banner b {
-  font-size: 12px;
-  display: block;
-  line-height: 1.2;
-}
-
-.phone-banner span {
-  font-size: 10px;
-  opacity: 0.9;
-}
-
-.phone-banner-btn {
-  background: #fff;
-  color: #d84e00;
-  font-size: 10px;
-  font-weight: 900;
-  padding: 4px 8px;
-  border-radius: 6px;
-}
-
-.phone-section-title {
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--navy);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.phone-cards-list {
-  display: grid;
+  justify-content: center;
   gap: 8px;
+  background: #0077ff;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 15.5px;
+  height: 48px;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0, 119, 255, 0.42);
+  transition: all 0.2s ease;
+  width: 100%;
 }
 
-.phone-card {
-  background: #ffffff;
-  border: 1px solid #e1eaf3;
-  border-radius: 10px;
-  padding: 8px 10px;
+.btn-hero-primary:hover {
+  background: #0066dd;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 119, 255, 0.5);
+}
+
+.btn-hero-secondary {
   display: flex;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-}
-
-.phone-card-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background: #eaf3fe;
-  display: grid;
-  place-items: center;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.phone-card-info { flex: 1; }
-.phone-card-name {
-  font-size: 11.5px;
-  font-weight: 800;
-  color: var(--navy);
-  line-height: 1.2;
-}
-
-.phone-card-meta {
-  font-size: 10px;
-  color: #71849a;
-  display: flex;
-  gap: 6px;
-  margin-top: 2px;
-}
-
-.phone-card-price {
-  font-size: 12px;
-  font-weight: 900;
-  color: var(--blue);
-}
-
-/* ================= SPECIAL CONDITION CARS SECTION ================= */
-.special-section {
-  padding: 80px 0 60px;
+  justify-content: center;
+  gap: 8px;
   background: #ffffff;
+  color: #0077ff;
+  font-weight: 800;
+  font-size: 15px;
+  height: 48px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  width: 100%;
 }
 
-.section-header-row {
+.btn-hero-secondary:hover {
+  background: #f7faff;
+  transform: translateY(-2px);
+}
+
+/* Hero Right Visual Stack */
+.hero-visual {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 20px;
-  margin-bottom: 35px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.section-title {
-  font-size: 36px;
+.hero-visual-frame {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+  background: #072b5c;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-img-truck {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-img-engine {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ================= SECTION COMMON STYLES ================= */
+.section {
+  padding: 42px 0 46px;
+}
+
+.section-head {
+  margin-bottom: 20px;
+}
+
+.section-head h2 {
+  font-size: clamp(22px, 2.8vw, 30px);
   font-weight: 900;
-  letter-spacing: -0.02em;
   color: var(--navy);
-  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
 }
 
-.section-subtitle {
-  font-size: 16px;
+.section-head p {
+  font-size: 14px;
   color: var(--text-muted);
   font-weight: 500;
 }
 
-.link-action {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--blue);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: gap 0.2s;
-}
-
-.link-action:hover { gap: 10px; }
-
-.condition-grid {
+/* ================= 1. EXPLORE CATEGORIES (3x2 GRID) ================= */
+.categories-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.condition-card {
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.condition-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
-  border-color: #bcd4f2;
-}
-
-.condition-card-img-wrap {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-  background: #eef3f9;
-}
-
-.condition-card-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.condition-card:hover .condition-card-img-wrap img {
-  transform: scale(1.05);
-}
-
-.condition-banner-tag {
-  padding: 12px 18px;
-  font-weight: 900;
-  font-size: 16px;
-  letter-spacing: 0.02em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.condition-banner-tag.red { background: var(--red); color: #fff; }
-.condition-banner-tag.blue { background: var(--blue); color: #fff; }
-.condition-banner-tag.orange { background: var(--orange); color: #fff; }
-
-.condition-card-body {
-  padding: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.condition-card-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.4;
-  font-weight: 500;
-}
-
-.btn-arrow-circle {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #edf4ff;
-  color: var(--blue);
-  display: grid;
-  place-items: center;
-  font-size: 18px;
-  font-weight: 900;
-  flex-shrink: 0;
-  transition: all 0.2s ease;
-}
-
-.condition-card:hover .btn-arrow-circle {
-  background: var(--blue);
-  color: #fff;
-  transform: translateX(3px);
-}
-
-/* ================= POPULAR CATEGORIES SECTION ================= */
-.categories-section {
-  padding: 70px 0 80px;
-  background: var(--bg-soft);
-  border-top: 1px solid #e7eff8;
-  border-bottom: 1px solid #e7eff8;
-}
-
-.cat-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-}
-
-.cat-card {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px 14px;
-  text-align: center;
-  box-shadow: 0 4px 16px rgba(6, 40, 79, 0.04);
-  transition: all 0.25s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 12px;
 }
 
-.cat-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--blue);
-  box-shadow: 0 10px 25px rgba(7, 91, 220, 0.12);
+.cat-card-modern {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  padding: 20px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(12, 35, 64, 0.04);
+  transition: all 0.25s ease;
+  min-height: 130px;
 }
 
-.cat-icon-wrap {
-  width: 68px;
-  height: 68px;
+.cat-card-modern:hover {
+  transform: translateY(-3px);
+  border-color: #bed7ff;
+  box-shadow: 0 12px 28px rgba(0, 102, 255, 0.12);
+}
+
+.cat-icon-circle {
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: #edf4fe;
-  display: grid;
-  place-items: center;
-  font-size: 32px;
-  transition: transform 0.2s;
+  background: #eaf3ff;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  transition: all 0.25s ease;
 }
 
-.cat-card:hover .cat-icon-wrap {
+.cat-icon-circle svg {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.25s ease;
+}
+
+.cat-card-modern:hover .cat-icon-circle {
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.cat-card-modern:hover .cat-icon-circle svg {
   transform: scale(1.1);
-  background: #dbeafe;
 }
 
-.cat-name {
-  font-size: 14px;
+.cat-name-modern {
+  font-size: 13px;
   font-weight: 800;
   color: var(--navy);
   line-height: 1.25;
 }
 
-.cat-count {
-  font-size: 11.5px;
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-/* ================= TRUST & FEATURES BAR ================= */
-.trust-bar {
-  background: #ffffff;
-  border-bottom: 1px solid #e2edf8;
-}
-
-.trust-bar-grid {
+/* ================= 2. DAMAGED VEHICLES (3 CARDS) ================= */
+.damaged-vehicles-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
 
-.trust-cell {
-  padding: 32px 24px;
+.damaged-card {
+  background: #082d62;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.damaged-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 40, 100, 0.18);
+}
+
+.damaged-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+  background: #051e42;
+}
+
+.damaged-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.damaged-card:hover .damaged-img-wrap img {
+  transform: scale(1.08);
+}
+
+.damaged-badge-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(12, 35, 64, 0.85);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.2px;
+}
+
+.damaged-label-bar {
+  background: #083b82;
+  color: #ffffff;
+  padding: 10px 6px;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
   display: flex;
   align-items: center;
-  gap: 16px;
-  border-right: 1px solid #e8f0f8;
+  justify-content: center;
+  gap: 6px;
 }
 
-.trust-cell:last-child { border-right: none; }
-
-.trust-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: #edf5ff;
-  color: var(--blue);
+/* ================= 3. FEATURED LIVE MARKETPLACE LISTINGS ================= */
+.listings-grid {
   display: grid;
-  place-items: center;
-  font-size: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.listing-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+
+.listing-card:hover {
+  transform: translateY(-3px);
+  border-color: #bed7ff;
+  box-shadow: var(--shadow-md);
+}
+
+.listing-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.listing-category-badge {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: #eaf3ff;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.listing-verified-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.listing-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.listing-meta {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.listing-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.listing-price {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--navy);
+}
+
+.listing-btn {
+  background: #0077ff;
+  color: #ffffff;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 800;
+  transition: all 0.2s;
+}
+
+.listing-btn:hover {
+  background: #005fcc;
+}
+
+/* ================= 4. SELL DAMAGED CAR BANNER ================= */
+.sell-car-strip {
+  background: linear-gradient(135deg, #092c5e 0%, #0d3f82 100%);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 28px rgba(9, 44, 94, 0.18);
+}
+
+.sell-car-left h3 {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.sell-car-left p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
+}
+
+.btn-sell-now {
+  background: #ff7a00;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 14.5px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(255, 122, 0, 0.35);
+  transition: all 0.2s;
+}
+
+.btn-sell-now:hover {
+  background: #e66e00;
+  transform: translateY(-2px);
+}
+
+/* ================= 5. TRUST & STATS ================= */
+.trust-section {
+  background: #f8fafd;
+  border-top: 1px solid #edf2f7;
+  border-bottom: 1px solid #edf2f7;
+  padding: 40px 0;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.trust-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(12, 35, 64, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--blue);
   flex-shrink: 0;
 }
 
-.trust-cell-title {
-  font-size: 16px;
+.trust-item-title {
+  font-size: 14px;
   font-weight: 800;
   color: var(--navy);
   margin-bottom: 2px;
 }
 
-.trust-cell-sub {
-  font-size: 13.5px;
+.trust-item-sub {
+  font-size: 12.5px;
   color: var(--text-muted);
-  font-weight: 500;
 }
 
-/* ================= APP DOWNLOAD SECTION ================= */
-.download-section {
-  padding: 85px 0 95px;
-  background: var(--orange-gradient);
+/* ================= 6. BOTTOM DOWNLOAD CTA BANNER ================= */
+.app-cta-banner {
+  background: linear-gradient(135deg, #05244d 0%, #074bb8 60%, #0066ff 100%);
   color: #ffffff;
-  position: relative;
-  overflow: hidden;
-}
-
-.download-section::after {
-  content: "";
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  pointer-events: none;
-}
-
-.download-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  align-items: center;
-  gap: 50px;
-  position: relative;
-  z-index: 2;
-}
-
-.download-title {
-  font-size: clamp(36px, 4vw, 52px);
-  line-height: 1.08;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-}
-
-.download-subtitle {
-  font-size: 20px;
-  color: #fff3e6;
-  font-weight: 600;
-  line-height: 1.45;
-  margin-bottom: 24px;
-}
-
-.download-features-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 32px;
-}
-
-.download-feat-item {
+  border-radius: 24px;
+  padding: 40px 36px;
+  margin: 30px auto;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 14.5px;
-  font-weight: 700;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.12);
-  padding: 8px 14px;
-  border-radius: 8px;
-  backdrop-filter: blur(6px);
+  justify-content: space-between;
+  gap: 30px;
+  box-shadow: 0 16px 36px rgba(0, 102, 255, 0.22);
 }
 
-.btn-apk-download {
+.cta-banner-left h3 {
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.cta-banner-left p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  max-width: 520px;
+}
+
+.cta-banner-right {
+  flex-shrink: 0;
+}
+
+.btn-cta-download {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  background: var(--blue);
-  color: #ffffff;
-  font-size: 18px;
+  gap: 10px;
+  background: #ffffff;
+  color: var(--blue);
   font-weight: 900;
-  padding: 18px 36px;
-  border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-  transition: all 0.25s ease;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s;
 }
 
-.btn-apk-download:hover {
-  background: #054abb;
+.btn-cta-download:hover {
+  background: #f2f7ff;
   transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
-}
-
-.download-subtext {
-  font-size: 13.5px;
-  color: #ffe6cf;
-  margin-top: 14px;
-  font-weight: 600;
 }
 
 /* ================= FOOTER ================= */
 footer {
   background: var(--navy-dark);
   color: #ffffff;
-  padding: 65px 0 30px;
+  padding: 50px 0 25px;
 }
 
-.footer-top-grid {
+.footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  grid-template-columns: 1.5fr 1fr 1fr;
   gap: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .footer-brand p {
-  color: #a4b8cf;
-  font-size: 14.5px;
+  color: #9ab0ca;
+  font-size: 14px;
   line-height: 1.6;
-  margin-top: 14px;
+  margin-top: 12px;
   max-width: 320px;
 }
 
-.footer-col-title {
-  font-size: 16px;
+.footer-title {
+  font-size: 15px;
   font-weight: 800;
   color: #ffffff;
-  margin-bottom: 18px;
-  letter-spacing: -0.2px;
+  margin-bottom: 16px;
 }
 
-.footer-links-list {
+.footer-links {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 10px;
 }
 
-.footer-links-list a {
-  color: #9cb1cb;
-  font-size: 14px;
+.footer-links a {
+  color: #8fa7c4;
+  font-size: 13.5px;
   font-weight: 600;
-  text-align: left;
   transition: color 0.2s;
 }
 
-.footer-links-list a:hover { color: #ffffff; }
+.footer-links a:hover { color: #ffffff; }
 
-.footer-contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.footer-contact-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: #c0d3eb;
-}
-
-.btn-footer-email {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--blue);
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 800;
-  padding: 12px 18px;
-  border-radius: 10px;
-  margin-top: 6px;
-  transition: all 0.2s;
-}
-
-.btn-footer-email:hover {
-  background: var(--blue-hover);
-  transform: translateY(-2px);
-}
-
-.footer-bottom-bar {
+.footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 25px;
+  padding-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 13.5px;
-  color: #7991ae;
+  font-size: 13px;
+  color: #728aa8;
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-  .eyebrow, .pills-row, .hero-ctas, .micro-copy { justify-content: center; }
-  .hero-subtitle { margin-left: auto; margin-right: auto; }
-  .condition-grid { grid-template-columns: 1fr 1fr; }
-  .cat-grid { grid-template-columns: repeat(4, 1fr); }
-  .trust-bar-grid { grid-template-columns: repeat(2, 1fr); }
-  .trust-cell:nth-child(2) { border-right: none; }
-  .trust-cell:nth-child(-n+2) { border-bottom: 1px solid #e8f0f8; }
-  .download-grid { grid-template-columns: 1fr; text-align: center; }
-  .download-features-list { justify-content: center; }
-  .download-subtext { justify-content: center; }
-  .footer-top-grid { grid-template-columns: 1fr 1fr; }
+  .listings-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
   .nav-links, .btn-nav-download { display: none; }
   .menu-toggle { display: block; }
-  .section-header-row { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .condition-grid { grid-template-columns: 1fr; }
-  .cat-grid { grid-template-columns: repeat(2, 1fr); }
-  .download-features-list { grid-template-columns: 1fr; }
-  .trust-bar-grid { grid-template-columns: 1fr; }
-  .trust-cell { border-right: none !important; border-bottom: 1px solid #e8f0f8; }
-  .trust-cell:last-child { border-bottom: none; }
-  .footer-top-grid { grid-template-columns: 1fr; gap: 30px; }
-  .footer-bottom-bar { flex-direction: column; gap: 10px; text-align: center; }
+  
+  .hero {
+    padding: 24px 0 28px;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 14px;
+    align-items: start;
+  }
+  
+  h1.hero-title {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  
+  .hero-subtitle {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  
+  .hero-pills {
+    grid-column: span 2;
+    margin-bottom: 14px;
+    gap: 6px;
+  }
+  
+  .hero-pill {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .hero-ctas {
+    grid-column: span 2;
+    max-width: 100%;
+    gap: 8px;
+  }
+  
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    height: 44px;
+    font-size: 14px;
+  }
+  
+  .hero-img-truck {
+    height: 85px;
+  }
+  
+  .hero-img-engine {
+    height: 110px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .cat-card-modern {
+    padding: 12px 4px;
+    min-height: 105px;
+    border-radius: 14px;
+  }
+  
+  .cat-icon-circle {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 6px;
+  }
+
+  .cat-icon-circle svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .cat-name-modern {
+    font-size: 11px;
+  }
+
+  .damaged-vehicles-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .damaged-img-wrap {
+    height: 75px;
+  }
+  
+  .damaged-label-bar {
+    font-size: 10px;
+    padding: 6px 3px;
+  }
+  
+  .listings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sell-car-strip {
+    flex-direction: column;
+    text-align: center;
+    padding: 22px 16px;
+  }
+  
+  .btn-sell-now {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .trust-grid { grid-template-columns: 1fr; gap: 14px; }
+  
+  .app-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 26px 18px;
+  }
+  
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
 }
 </style>
 </head>
@@ -975,9 +915,10 @@ footer {
 
     <nav class="nav-links">
       <a href="#home" class="active" data-i18n="nav_home">Home</a>
-      <a href="#about" data-i18n="nav_about">About</a>
-      <a href="#features" data-i18n="nav_features">Features</a>
       <a href="#categories" data-i18n="nav_categories">Categories</a>
+      <a href="#damaged" data-i18n="nav_damaged">Damaged Vehicles</a>
+      <a href="#listings" data-i18n="nav_listings">Marketplace</a>
+      <a href="#about" data-i18n="nav_about">About</a>
       <a href="mailto:autopartsindia7@gmail.com?subject=AutoParts%20India%20Inquiry" data-i18n="nav_contact">Contact</a>
     </nav>
 
@@ -1001,598 +942,554 @@ footer {
   <!-- Mobile Drawer Menu -->
   <div class="mobile-nav" id="mobile-nav-drawer">
     <a href="#home" onclick="closeMobileNav()" data-i18n="nav_home">Home</a>
-    <a href="#about" onclick="closeMobileNav()" data-i18n="nav_about">About</a>
-    <a href="#features" onclick="closeMobileNav()" data-i18n="nav_features">Features</a>
     <a href="#categories" onclick="closeMobileNav()" data-i18n="nav_categories">Categories</a>
+    <a href="#damaged" onclick="closeMobileNav()" data-i18n="nav_damaged">Damaged Vehicles</a>
+    <a href="#listings" onclick="closeMobileNav()" data-i18n="nav_listings">Marketplace</a>
+    <a href="#about" onclick="closeMobileNav()" data-i18n="nav_about">About</a>
     <a href="mailto:autopartsindia7@gmail.com?subject=AutoParts%20India%20Inquiry" onclick="closeMobileNav()" data-i18n="nav_contact">Contact</a>
-    <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="btn-primary-lg" style="margin-top:10px" onclick="closeMobileNav()">
+    <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="btn-hero-primary" style="margin-top:8px" onclick="closeMobileNav()">
       <span>↓</span> <span data-i18n="btn_download_apk">Download APK</span>
     </a>
   </div>
 </header>
 
 <main>
-  <!-- HERO SECTION -->
+  <!-- HERO SECTION (MATCHING USER MOCKUP EXACTLY) -->
   <section class="hero" id="home">
     <div class="container hero-grid">
+      
+      <!-- Hero Left: Content matching reference mockup -->
       <div class="hero-left">
-        <div class="eyebrow" data-i18n="hero_eyebrow">INDIA-WIDE AUTOMOTIVE MARKETPLACE</div>
-        
         <h1 class="hero-title">
           <span data-i18n="hero_title_p1">India’s Trusted</span><br>
-          <span data-i18n="hero_title_p2">Auto Parts</span> <span data-i18n="hero_title_p3">Marketplace</span>
+          <span class="hero-orange" data-i18n="hero_title_p2">Auto Parts</span> <span data-i18n="hero_title_and">&amp;</span><br>
+          <span data-i18n="hero_title_p3">Damaged Vehicle</span><br>
+          <span data-i18n="hero_title_p4">Marketplace</span>
         </h1>
         
         <p class="hero-subtitle" data-i18n="hero_subtitle">
-          Buy &amp; Sell New and Used Auto Parts for All Vehicles Across India.
+          Buy &amp; Sell New and Used Auto Parts Across India.
         </p>
+      </div>
 
-        <!-- Feature Badges -->
-        <div class="pills-row">
-          <div class="pill-item">✓ <span data-i18n="pill_genuine">Genuine Parts</span></div>
-          <div class="pill-item">✓ <span data-i18n="pill_verified">Verified Sellers</span></div>
-          <div class="pill-item">📍 <span data-i18n="pill_india">All India</span></div>
-          <div class="pill-item">🏷️ <span data-i18n="pill_deals">Best Deals</span></div>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="hero-ctas">
-          <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="btn-primary-lg">
-            <span>↓</span> <span data-i18n="btn_download_apk">Download APK</span>
-          </a>
-          <a href="#categories" class="btn-outline-lg">
-            <span data-i18n="btn_explore">Explore Marketplace</span> →
-          </a>
-        </div>
-
-        <div class="micro-copy">
-          <span>🤖</span> <span data-i18n="hero_micro">For Android Devices • Free to Download</span>
+      <!-- Hero Right: Composite Visual with Carrier Damaged Car & Engine Parts -->
+      <div class="hero-visual">
+        <div class="hero-visual-frame">
+          <img src="assets/total-loss.png" alt="Accident & Damaged Vehicle Carrier" class="hero-img-truck">
+          <img src="assets/parts-hero.png" alt="Auto Spare Parts Assembly" class="hero-img-engine">
         </div>
       </div>
 
-      <!-- Hero Right: Live Interactive Phone Mockup -->
-      <div class="hero-mockup-wrap">
-        <div class="phone-device">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-header">
-              <div class="phone-header-top">
-                <span class="phone-brand">AutoParts India</span>
-                <span class="phone-location" data-i18n="mock_location">📍 All India</span>
-              </div>
-              <div class="phone-search-bar">
-                <span>🔍</span>
-                <span data-i18n="mock_search_placeholder">Search spare parts, car models...</span>
-              </div>
-            </div>
-
-              <div class="phone-content">
-              <div class="phone-banner">
-                <div>
-                  <b data-i18n="mock_banner_title">UP TO 50% OFF ON GENUINE PARTS</b>
-                  <span data-i18n="mock_banner_sub">Verified Sellers Across India</span>
-                </div>
-                <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="phone-banner-btn" data-i18n="mock_banner_btn">SHOP NOW</a>
-              </div>
-
-              <div class="phone-section-title">
-                <span data-i18n="mock_featured">Featured Parts</span>
-                <a href="#categories" style="color:var(--blue);font-weight:700;">View All</a>
-              </div>
-
-              <div class="phone-cards-list">
-                <div class="phone-card">
-                  <div class="phone-card-icon">⚙️</div>
-                  <div class="phone-card-info">
-                    <div class="phone-card-name">Engine - Maruti Suzuki Swift</div>
-                    <div class="phone-card-meta"><span>Tamil Nadu</span> • <span>Grade A</span></div>
-                  </div>
-                  <div class="phone-card-price">₹12,500</div>
-                </div>
-
-                <div class="phone-card">
-                  <div class="phone-card-icon">💡</div>
-                  <div class="phone-card-info">
-                    <div class="phone-card-name">Headlight Assembly - Hyundai i20</div>
-                    <div class="phone-card-meta"><span>Karnataka</span> • <span>OEM Genuine</span></div>
-                  </div>
-                  <div class="phone-card-price">₹3,800</div>
-                </div>
-
-                <div class="phone-card">
-                  <div class="phone-card-icon">🛞</div>
-                  <div class="phone-card-info">
-                    <div class="phone-card-name">Front Suspension Assembly</div>
-                    <div class="phone-card-meta"><span>Chennai</span> • <span>Tested Good</span></div>
-                  </div>
-                  <div class="phone-card-price">₹6,200</div>
-                </div>
-
-                <div class="phone-card">
-                  <div class="phone-card-icon">🛑</div>
-                  <div class="phone-card-info">
-                    <div class="phone-card-name">Brake Disc &amp; Caliper Set</div>
-                    <div class="phone-card-meta"><span>Kerala</span> • <span>Fresh Arrival</span></div>
-                  </div>
-                  <div class="phone-card-price">₹4,500</div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <!-- 3 Feature Badges (Spans both on mobile) -->
+      <div class="hero-pills">
+        <div class="hero-pill">
+          <svg class="pill-icon-svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+          </svg>
+          <span data-i18n="pill_verified">Verified Sellers</span>
         </div>
+        <div class="hero-pill">
+          <svg class="pill-icon-svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+          </svg>
+          <span data-i18n="pill_india">All India</span>
+        </div>
+        <div class="hero-pill">
+          <svg class="pill-icon-svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M17.707 9.293l-5-5A.997.997 0 0012 4H5a1 1 0 00-1 1v7c0 .266.105.52.293.707l5 5a.999.999 0 001.414 0l7-7a.999.999 0 000-1.414zM7 7a1 1 0 110-2 1 1 0 010 2z" clip-rule="evenodd"/>
+          </svg>
+          <span data-i18n="pill_deals">Best Deals</span>
+        </div>
+      </div>
+
+      <!-- 2 Main Call to Action Buttons -->
+      <div class="hero-ctas">
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="btn-hero-primary">
+          <span>↓</span> <span data-i18n="btn_download_apk">Download APK</span>
+        </a>
+        <a href="#categories" class="btn-hero-secondary">
+          <span data-i18n="btn_explore">Explore Marketplace</span> <span>→</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 1. EXPLORE CATEGORIES SECTION (3 columns x 2 rows matching mockup) -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="cat_title">Explore Categories</h2>
+        <p data-i18n="cat_subtitle">Find the right auto parts for your vehicle.</p>
+      </div>
+
+      <div class="categories-grid">
+        <!-- 1. Engine & Mechanical -->
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card-modern">
+          <div class="cat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
+          <div class="cat-name-modern" data-i18n="cat_engine">Engine &amp;<br>Mechanical</div>
+        </a>
+
+        <!-- 2. Body & Exterior -->
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card-modern">
+          <div class="cat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 17h14v-5l-3-6H8L5 12v5z"/>
+              <circle cx="7.5" cy="17.5" r="2.5"/>
+              <circle cx="16.5" cy="17.5" r="2.5"/>
+            </svg>
+          </div>
+          <div class="cat-name-modern" data-i18n="cat_body">Body &amp;<br>Exterior</div>
+        </a>
+
+        <!-- 3. Brakes & Discs -->
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card-modern">
+          <div class="cat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="12" cy="12" r="1.5"/>
+              <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/>
+            </svg>
+          </div>
+          <div class="cat-name-modern" data-i18n="cat_brakes">Brakes &amp;<br>Discs</div>
+        </a>
+
+        <!-- 4. Electrical & Lighting -->
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card-modern">
+          <div class="cat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z"/>
+              <path d="M12 6v3"/>
+            </svg>
+          </div>
+          <div class="cat-name-modern" data-i18n="cat_electrical">Electrical &amp;<br>Lighting</div>
+        </a>
+
+        <!-- 5. Suspension & Steering -->
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card-modern">
+          <div class="cat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v3M12 19v3M8 6h8l-8 3h8l-8 3h8l-8 3h8l-8 3h8"/>
+            </svg>
+          </div>
+          <div class="cat-name-modern" data-i18n="cat_suspension">Suspension &amp;<br>Steering</div>
+        </a>
+
+        <!-- 6. Interior & Wheels -->
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card-modern">
+          <div class="cat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 19v-9a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v9M4 19h16M7 19v3M17 19v3M9 11h6"/>
+            </svg>
+          </div>
+          <div class="cat-name-modern" data-i18n="cat_interior">Interior &amp;<br>Wheels</div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- POPULAR CATEGORIES SECTION -->
-  <section class="categories-section" id="categories">
+  <!-- 2. DAMAGED VEHICLES SECTION (3 cards matching mockup) -->
+  <section class="section" id="damaged" style="background:#f8fafd; border-top:1px solid #eef2f7;">
     <div class="container">
-      <div class="section-header-row">
+      <div class="section-head">
+        <h2 data-i18n="damaged_title">Damaged Vehicles</h2>
+        <p data-i18n="damaged_subtitle">Buy &amp; Sell damaged vehicles across India.</p>
+      </div>
+
+      <div class="damaged-vehicles-grid">
+        <!-- 1. Accident Damaged -->
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="damaged-card">
+          <div class="damaged-img-wrap">
+            <span class="damaged-badge-tag">450+ LOTS</span>
+            <img src="assets/total-loss.png" alt="Accident Damaged Vehicles">
+          </div>
+          <div class="damaged-label-bar">
+            <span>🚗</span> <span data-i18n="damaged_accident">Accident Damaged</span>
+          </div>
+        </a>
+
+        <!-- 2. Flood Damaged -->
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="damaged-card">
+          <div class="damaged-img-wrap">
+            <span class="damaged-badge-tag">180+ LOTS</span>
+            <img src="assets/flood-damaged.png" alt="Flood Damaged Vehicles">
+          </div>
+          <div class="damaged-label-bar">
+            <span>🌊</span> <span data-i18n="damaged_flood">Flood Damaged</span>
+          </div>
+        </a>
+
+        <!-- 3. Fire Damaged -->
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="damaged-card">
+          <div class="damaged-img-wrap">
+            <span class="damaged-badge-tag">85+ LOTS</span>
+            <img src="assets/fire-damaged.png" alt="Fire Damaged Vehicles">
+          </div>
+          <div class="damaged-label-bar">
+            <span>🔥</span> <span data-i18n="damaged_fire">Fire Damaged</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURED LIVE MARKETPLACE LISTINGS -->
+  <section class="section" id="listings">
+    <div class="container">
+      <div class="section-head" style="display:flex; justify-content:space-between; align-items:flex-end;">
         <div>
-          <h2 class="section-title" data-i18n="cat_section_title">Popular Categories</h2>
-          <p class="section-subtitle" data-i18n="cat_section_subtitle">Find the right auto parts for your vehicle</p>
+          <h2>Featured Marketplace Deals</h2>
+          <p>Real-time parts and verified vehicles listed by dismantlers across India.</p>
         </div>
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="link-action">
-          <span data-i18n="btn_view_all_cat">View All Categories</span> →
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" style="font-size:13.5px; font-weight:800; color:var(--blue); display:inline-flex; align-items:center; gap:4px;">
+          View All on App &rarr;
         </a>
       </div>
 
-      <div class="cat-grid">
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card">
-          <div class="cat-icon-wrap">⚙️</div>
-          <div class="cat-name" data-i18n="cat_engine">Engine &amp; Mechanical</div>
-          <div class="cat-count">1,420+ Parts</div>
-        </a>
-
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card">
-          <div class="cat-icon-wrap">🚪</div>
-          <div class="cat-name" data-i18n="cat_body">Body &amp; Exterior</div>
-          <div class="cat-count">2,850+ Parts</div>
-        </a>
-
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card">
-          <div class="cat-icon-wrap">🛑</div>
-          <div class="cat-name" data-i18n="cat_brakes">Brakes &amp; Discs</div>
-          <div class="cat-count">890+ Parts</div>
-        </a>
-
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card">
-          <div class="cat-icon-wrap">💡</div>
-          <div class="cat-name" data-i18n="cat_electrical">Electrical &amp; Lighting</div>
-          <div class="cat-count">1,120+ Parts</div>
-        </a>
-
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card">
-          <div class="cat-icon-wrap">🛞</div>
-          <div class="cat-name" data-i18n="cat_suspension">Suspension &amp; Steering</div>
-          <div class="cat-count">740+ Parts</div>
-        </a>
-
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card">
-          <div class="cat-icon-wrap">💺</div>
-          <div class="cat-name" data-i18n="cat_interior">Interior &amp; Wheels</div>
-          <div class="cat-count">1,630+ Parts</div>
-        </a>
-
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card">
-          <div class="cat-icon-wrap">❄️</div>
-          <div class="cat-name" data-i18n="cat_cooling">Cooling &amp; AC</div>
-          <div class="cat-count">620+ Parts</div>
-        </a>
-
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card">
-          <div class="cat-icon-wrap">🔄</div>
-          <div class="cat-name" data-i18n="cat_transmission">Transmission &amp; Clutch</div>
-          <div class="cat-count">510+ Parts</div>
-        </a>
-
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card">
-          <div class="cat-icon-wrap">🔧</div>
-          <div class="cat-name" data-i18n="cat_exhaust">Exhaust &amp; Fuel</div>
-          <div class="cat-count">480+ Parts</div>
-        </a>
-
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="cat-card">
-          <div class="cat-icon-wrap">✨</div>
-          <div class="cat-name" data-i18n="cat_more">Accessories &amp; Oils</div>
-          <div class="cat-count">950+ Parts</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- VEHICLES IN SPECIAL CONDITION -->
-  <section class="special-section" id="about">
-    <div class="container">
-      <div class="section-header-row">
-        <div>
-          <h2 class="section-title" data-i18n="special_title">Vehicles in Special Condition</h2>
-          <p class="section-subtitle" data-i18n="special_subtitle">Find and buy parts from all types of vehicles</p>
-        </div>
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="link-action">
-          <span data-i18n="btn_view_all">View All</span> →
-        </a>
-      </div>
-
-      <div class="condition-grid">
-        <!-- 1. Total Loss Cars -->
-        <article class="condition-card">
-          <div class="condition-card-img-wrap">
-            <img src="assets/total-loss.png" alt="Total Loss Cars">
-          </div>
-          <div class="condition-banner-tag red">
-            <span data-i18n="card_total_loss">TOTAL LOSS CARS</span>
-            <span>💥</span>
-          </div>
-          <div class="condition-card-body">
-            <div class="condition-card-desc" data-i18n="desc_total_loss">
-              Find genuine parts from accident damaged vehicles at salvage rates.
+      <div class="listings-grid" id="listings-container">
+        <!-- Listing 1 -->
+        <div class="listing-card" data-brand="Maruti">
+          <div>
+            <div class="listing-top">
+              <span class="listing-category-badge">Body &amp; Exterior</span>
+              <span class="listing-verified-tag">✓ Verified Seller</span>
             </div>
-            <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="btn-arrow-circle" aria-label="Download App to View Parts">→</a>
-          </div>
-        </article>
-
-        <!-- 2. Flood Damaged Cars -->
-        <article class="condition-card">
-          <div class="condition-card-img-wrap">
-            <img src="assets/flood-damaged.png" alt="Flood Damaged Cars">
-          </div>
-          <div class="condition-banner-tag blue">
-            <span data-i18n="card_flood_damaged">FLOOD DAMAGED CARS</span>
-            <span>🌊</span>
-          </div>
-          <div class="condition-card-body">
-            <div class="condition-card-desc" data-i18n="desc_flood_damaged">
-              Quality body panels, mechanical parts, and alloys from water damaged vehicles.
-            </div>
-            <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="btn-arrow-circle" aria-label="Download App to View Parts">→</a>
-          </div>
-        </article>
-
-        <!-- 3. Fire Damaged Cars -->
-        <article class="condition-card">
-          <div class="condition-card-img-wrap">
-            <img src="assets/fire-damaged.png" alt="Fire Damaged Cars">
-          </div>
-          <div class="condition-banner-tag orange">
-            <span data-i18n="card_fire_damaged">FIRE DAMAGED CARS</span>
-            <span>🔥</span>
-          </div>
-          <div class="condition-card-body">
-            <div class="condition-card-desc" data-i18n="desc_fire_damaged">
-              Get affordable undamaged chassis, rear axles, suspension, and wheels.
-            </div>
-            <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="btn-arrow-circle" aria-label="Download App to View Parts">→</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST & FEATURE BAR -->
-  <section class="trust-bar" id="features">
-    <div class="container">
-      <div class="trust-bar-grid">
-        <div class="trust-cell">
-          <div class="trust-icon-box">✓</div>
-          <div>
-            <div class="trust-cell-title" data-i18n="trust_1_title">Verified Sellers</div>
-            <div class="trust-cell-sub" data-i18n="trust_1_sub">Trusted &amp; genuine sellers across India</div>
-          </div>
-        </div>
-
-        <div class="trust-cell">
-          <div class="trust-icon-box">₹</div>
-          <div>
-            <div class="trust-cell-title" data-i18n="trust_2_title">Best Prices</div>
-            <div class="trust-cell-sub" data-i18n="trust_2_sub">Great deals on quality parts</div>
-          </div>
-        </div>
-
-        <div class="trust-cell">
-          <div class="trust-icon-box">🚚</div>
-          <div>
-            <div class="trust-cell-title" data-i18n="trust_3_title">All India</div>
-            <div class="trust-cell-sub" data-i18n="trust_3_sub">Buy &amp; sell across India</div>
-          </div>
-        </div>
-
-        <div class="trust-cell">
-          <div class="trust-icon-box">🎧</div>
-          <div>
-            <div class="trust-cell-title" data-i18n="trust_4_title">24/7 Support</div>
-            <div class="trust-cell-sub" data-i18n="trust_4_sub">We’re always here to help you</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- APP DOWNLOAD SECTION -->
-  <section class="download-section" id="download">
-    <div class="container download-grid">
-      <div>
-        <h2 class="download-title">
-          <span data-i18n="download_title_p1">Download</span><br>
-          <span style="color:#ffffff;" data-i18n="download_title_p2">AutoParts India</span> <span data-i18n="download_title_p3">App</span>
-        </h2>
-        <p class="download-subtitle" data-i18n="download_tagline">
-          India’s Professional Marketplace for New &amp; Used Auto Parts
-        </p>
-
-        <div class="download-features-list">
-          <div class="download-feat-item">✓ <span data-i18n="feat_easy">Easy Buying &amp; Selling</span></div>
-          <div class="download-feat-item">✓ <span data-i18n="feat_chat">Chat with Sellers</span></div>
-          <div class="download-feat-item">✓ <span data-i18n="feat_free_ads">Post Ads for Free</span></div>
-          <div class="download-feat-item">✓ <span data-i18n="feat_nearby">Find Nearby Sellers</span></div>
-        </div>
-
-        <!-- Real Working Download Button -->
-        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="btn-apk-download">
-          <span style="font-size:24px;">🤖</span>
-          <div>
-            <div style="font-size:13px;font-weight:600;opacity:0.9;" data-i18n="btn_android_free">ANDROID APPS</div>
-            <div data-i18n="btn_download_apk_now">Download APK Now ↓</div>
-          </div>
-        </a>
-
-        <div class="download-subtext">
-          <span>✓ For Android Devices</span> &nbsp;|&nbsp; 
-          <span>✓ Free to Download</span> &nbsp;|&nbsp; 
-          <span>✓ 100% Safe &amp; Secure</span>
-        </div>
-      </div>
-
-      <div style="display:flex;justify-content:center;">
-        <div style="background:rgba(255,255,255,0.14);padding:28px;border-radius:28px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);text-align:center;max-width:340px;">
-          <div style="font-size:52px;margin-bottom:12px;">📲</div>
-          <h3 style="font-size:22px;font-weight:900;margin-bottom:8px;" data-i18n="box_fast_title">Instant Parts Search</h3>
-          <p style="font-size:14px;color:#fff0e0;line-height:1.5;margin-bottom:20px;" data-i18n="box_fast_desc">
-            Directly connect with 10,000+ scrapyards and spare part sellers across all Indian states.
-          </p>
-          <a href="mailto:autopartsindia7@gmail.com?subject=Need%20Specific%20Auto%20Part" style="display:inline-block;background:#ffffff;color:var(--orange);font-weight:800;font-size:14px;padding:12px 20px;border-radius:10px;width:100%;" data-i18n="btn_ask_part">
-            ✉ Need a Specific Part? Email Us
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer id="contact">
-  <div class="container">
-    <div class="footer-top-grid">
-      <!-- Col 1: Brand Info -->
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="AutoParts India" style="height:54px;filter:brightness(0) invert(1);">
-        <p data-i18n="footer_desc">
-          India’s Professional Marketplace for New &amp; Used Auto Parts. Connecting buyers, sellers, and salvage automobile part dealers.
-        </p>
-      </div>
-
-      <!-- Col 2: Quick Links -->
-      <div>
-        <h4 class="footer-col-title" data-i18n="footer_quick_links">Quick Links</h4>
-        <div class="footer-links-list">
-          <a href="#home" data-i18n="nav_home">Home</a>
-          <a href="#about" data-i18n="nav_about">About Us</a>
-          <a href="#categories" data-i18n="nav_categories">Categories</a>
-          <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" data-i18n="btn_download_apk">Download App</a>
-          <a href="mailto:autopartsindia7@gmail.com?subject=AutoParts%20India%20Support" data-i18n="nav_contact">Contact Us</a>
-        </div>
-      </div>
-
-      <!-- Col 3: Support & Legal -->
-      <div>
-        <h4 class="footer-col-title" data-i18n="footer_support">Support &amp; Info</h4>
-        <div class="footer-links-list">
-          <!-- Real Working Privacy Policy Link -->
-          <a href="/privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
-          <a href="mailto:autopartsindia7@gmail.com?subject=Seller%20Registration%20Inquiry" data-i18n="footer_seller_reg">Seller Registration</a>
-          <a href="mailto:autopartsindia7@gmail.com?subject=Support%20Request">Customer Support</a>
-        </div>
-      </div>
-
-      <!-- Col 4: Contact Us -->
-      <div>
-        <h4 class="footer-col-title" data-i18n="footer_contact_title">Contact Us</h4>
-        <div class="footer-contact-info">
-          <div class="footer-contact-item">
-            <span style="font-size:20px;">✉️</span>
-            <div>
-              <small style="display:block;opacity:0.75;font-size:11px;" data-i18n="footer_email_label">Official Support Email</small>
-              <a href="mailto:autopartsindia7@gmail.com" style="color:#fff;font-weight:700;">autopartsindia7@gmail.com</a>
+            <h4 class="listing-title">Swift Dzire OEM Front Bumper &amp; Chrome Grille</h4>
+            <div class="listing-meta">
+              <span>📍 Mumbai, MH</span>
+              <span>•</span>
+              <span>Maruti Suzuki</span>
             </div>
           </div>
-          <div class="footer-contact-item">
-            <span style="font-size:20px;">📍</span>
-            <div>
-              <small style="display:block;opacity:0.75;font-size:11px;" data-i18n="footer_coverage_label">Coverage Area</small>
-              <span style="font-weight:700;" data-i18n="footer_coverage_val">All States &amp; Cities, India</span>
+          <div class="listing-bottom">
+            <div class="listing-price">₹3,400</div>
+            <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="listing-btn">
+              Buy on App
+            </a>
+          </div>
+        </div>
+
+        <!-- Listing 2 -->
+        <div class="listing-card" data-brand="Toyota">
+          <div>
+            <div class="listing-top">
+              <span class="listing-category-badge">Engine Assembly</span>
+              <span class="listing-verified-tag">✓ Tested &amp; Certified</span>
+            </div>
+            <h4 class="listing-title">Innova Crysta 2.4L Diesel Complete Engine Unit</h4>
+            <div class="listing-meta">
+              <span>📍 Delhi NCR</span>
+              <span>•</span>
+              <span>Toyota</span>
             </div>
           </div>
+          <div class="listing-bottom">
+            <div class="listing-price">₹68,500</div>
+            <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="listing-btn">
+              Buy on App
+            </a>
+          </div>
+        </div>
+
+        <!-- Listing 3 -->
+        <div class="listing-card" data-brand="Mahindra">
           <div>
-            <a href="mailto:autopartsindia7@gmail.com?subject=AutoParts%20Inquiry" class="btn-footer-email">
-              ✉ <span data-i18n="btn_send_msg">Send Email to Support</span>
+            <div class="listing-top">
+              <span class="listing-category-badge">Suspension &amp; 4x4</span>
+              <span class="listing-verified-tag">✓ 90-Day Warranty</span>
+            </div>
+            <h4 class="listing-title">Mahindra Thar CRDe 4WD Transfer Case &amp; Gearbox</h4>
+            <div class="listing-meta">
+              <span>📍 Coimbatore, TN</span>
+              <span>•</span>
+              <span>Mahindra</span>
+            </div>
+          </div>
+          <div class="listing-bottom">
+            <div class="listing-price">₹26,000</div>
+            <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="listing-btn">
+              Buy on App
+            </a>
+          </div>
+        </div>
+
+        <!-- Listing 4 -->
+        <div class="listing-card" data-brand="Hyundai">
+          <div>
+            <div class="listing-top">
+              <span class="listing-category-badge">Electrical &amp; Lights</span>
+              <span class="listing-verified-tag">✓ Genuine Mobis</span>
+            </div>
+            <h4 class="listing-title">Hyundai Creta LED Projector Headlamp Set (Left &amp; Right)</h4>
+            <div class="listing-meta">
+              <span>📍 Bengaluru, KA</span>
+              <span>•</span>
+              <span>Hyundai</span>
+            </div>
+          </div>
+          <div class="listing-bottom">
+            <div class="listing-price">₹8,900</div>
+            <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="listing-btn">
+              Buy on App
+            </a>
+          </div>
+        </div>
+
+        <!-- Listing 5 -->
+        <div class="listing-card" data-brand="Tata">
+          <div>
+            <div class="listing-top">
+              <span class="listing-category-badge">Damaged Vehicle</span>
+              <span class="listing-verified-tag">✓ Clean RC / NOC</span>
+            </div>
+            <h4 class="listing-title">2023 Tata Nexon EV Frontal Impact (Battery Pack Intact)</h4>
+            <div class="listing-meta">
+              <span>📍 Pune, MH</span>
+              <span>•</span>
+              <span>Tata Motors</span>
+            </div>
+          </div>
+          <div class="listing-bottom">
+            <div class="listing-price">₹3,20,000</div>
+            <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="listing-btn">
+              Bid on App
+            </a>
+          </div>
+        </div>
+
+        <!-- Listing 6 -->
+        <div class="listing-card" data-brand="Honda">
+          <div>
+            <div class="listing-top">
+              <span class="listing-category-badge">Brakes &amp; Discs</span>
+              <span class="listing-verified-tag">✓ OEM Quality</span>
+            </div>
+            <h4 class="listing-title">Honda City 5th Gen Front Ventilated Disc Rotors &amp; Calipers</h4>
+            <div class="listing-meta">
+              <span>📍 Chennai, TN</span>
+              <span>•</span>
+              <span>Honda</span>
+            </div>
+          </div>
+          <div class="listing-bottom">
+            <div class="listing-price">₹4,200</div>
+            <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="listing-btn">
+              Buy on App
             </a>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="footer-bottom-bar">
-      <div>© 2026 AutoParts India. <span data-i18n="footer_rights">All rights reserved.</span></div>
-      <div>
-        <a href="#home" style="color:#9cb1cb;margin-right:15px;" data-i18n="footer_back_top">↑ Back to Top</a>
-        <a href="/privacy.html" style="color:#fff;text-decoration:underline;">Privacy Policy</a>
+  <!-- 4. SELL DAMAGED CAR STRIP -->
+  <div class="container">
+    <div class="sell-car-strip">
+      <div class="sell-car-left">
+        <h3>Have a Damaged, Accidental, or Scrap Vehicle to Sell?</h3>
+        <p>List your car or commercial vehicle in under 2 minutes. Receive instant cash offers from 2,500+ verified auto dismantlers and buyers across India.</p>
       </div>
+      <div>
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="btn-sell-now">
+          Sell Your Vehicle on App &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. TRUST & FEATURES BAR -->
+  <section class="trust-section" id="about">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon">🛡️</div>
+          <div>
+            <div class="trust-item-title" data-i18n="trust_1_title">100% Genuine Parts</div>
+            <div class="trust-item-sub" data-i18n="trust_1_sub">Directly from verified sellers &amp; yards</div>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">🇮🇳</div>
+          <div>
+            <div class="trust-item-title" data-i18n="trust_2_title">All-India Delivery</div>
+            <div class="trust-item-sub" data-i18n="trust_2_sub">Shipped to workshops nationwide</div>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">💰</div>
+          <div>
+            <div class="trust-item-title" data-i18n="trust_3_title">Best Market Prices</div>
+            <div class="trust-item-sub" data-i18n="trust_3_sub">Save up to 60% on OEM &amp; used parts</div>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon">⚡</div>
+          <div>
+            <div class="trust-item-title" data-i18n="trust_4_title">Instant Contact</div>
+            <div class="trust-item-sub" data-i18n="trust_4_sub">Call or chat directly with sellers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. BOTTOM DOWNLOAD BANNER -->
+  <div class="container">
+    <div class="app-cta-banner">
+      <div class="cta-banner-left">
+        <h3 data-i18n="cta_title">Get the AutoParts India Mobile App</h3>
+        <p data-i18n="cta_sub">Find spare parts for cars, bikes, commercial vehicles, or sell your salvage and damaged vehicles easily on Android.</p>
+      </div>
+      <div class="cta-banner-right">
+        <a href="https://huggingface.co/autoparts/autoparts-india-apk/resolve/main/Auto_Parts_India.apk" download="Auto_Parts_India.apk" class="btn-cta-download">
+          <span>↓</span> <span data-i18n="btn_download_apk">Download APK (114 MB)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-size:24px; font-weight:900; letter-spacing:-0.5px; margin-bottom:6px;">
+          <span style="color:#38bdf8;">Auto</span><span style="color:#ff7a00;">Parts</span> <span style="color:#ffffff;">India</span>
+        </div>
+        <p data-i18n="footer_desc">India’s trusted digital marketplace connecting vehicle owners, garages, and salvage dealers with genuine auto parts and vehicles nationwide.</p>
+      </div>
+
+      <div>
+        <div class="footer-title" data-i18n="footer_quick_links">Quick Links</div>
+        <div class="footer-links">
+          <a href="#home" data-i18n="nav_home">Home</a>
+          <a href="#categories" data-i18n="nav_categories">Categories</a>
+          <a href="#damaged" data-i18n="nav_damaged">Damaged Vehicles</a>
+          <a href="#listings" data-i18n="nav_listings">Marketplace</a>
+          <a href="#about" data-i18n="nav_about">About Us</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-title" data-i18n="footer_support">Support &amp; Contact</div>
+        <div class="footer-links">
+          <a href="mailto:autopartsindia7@gmail.com">✉️ autopartsindia7@gmail.com</a>
+          <span style="color:#8fa7c4; font-size:13.5px;">📍 India-Wide Operations</span>
+          <span style="color:#8fa7c4; font-size:13.5px;">🕒 Support: Mon - Sat (9 AM - 7 PM)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 AutoParts India. All rights reserved.</div>
+      <div><a href="privacy.html" style="color:#8fa7c4;">Privacy Policy</a> • <a href="mailto:autopartsindia7@gmail.com" style="color:#8fa7c4;">Contact Us</a></div>
     </div>
   </div>
 </footer>
 
-<!-- JAVASCRIPT: BILINGUAL TRANSLATION & MOBILE NAV ONLY (NO POPUPS) -->
 <script>
+// Translations Dictionary: English & Hindi
 const translations = {
   en: {
     nav_home: "Home",
-    nav_about: "About",
-    nav_features: "Features",
     nav_categories: "Categories",
+    nav_damaged: "Damaged Vehicles",
+    nav_listings: "Marketplace",
+    nav_about: "About",
     nav_contact: "Contact",
     btn_download_apk: "Download APK",
-    hero_eyebrow: "INDIA-WIDE AUTOMOTIVE MARKETPLACE",
     hero_title_p1: "India’s Trusted",
     hero_title_p2: "Auto Parts",
-    hero_title_p3: "Marketplace",
-    hero_subtitle: "Buy & Sell New and Used Auto Parts for All Vehicles Across India.",
-    pill_genuine: "Genuine Parts",
+    hero_title_and: "&",
+    hero_title_p3: "Damaged Vehicle",
+    hero_title_p4: "Marketplace",
+    hero_subtitle: "Buy & Sell New and Used Auto Parts Across India.",
     pill_verified: "Verified Sellers",
     pill_india: "All India",
     pill_deals: "Best Deals",
     btn_explore: "Explore Marketplace",
-    hero_micro: "For Android Devices • Free to Download",
-    mock_location: "📍 All India",
-    mock_search_placeholder: "Search spare parts, car models...",
-    mock_banner_title: "UP TO 50% OFF ON GENUINE PARTS",
-    mock_banner_sub: "Verified Sellers Across India",
-    mock_banner_btn: "SHOP NOW",
-    mock_featured: "Featured Parts",
-    special_title: "Vehicles in Special Condition",
-    special_subtitle: "Find and buy parts from all types of vehicles",
-    btn_view_all: "View All",
-    card_total_loss: "TOTAL LOSS CARS",
-    desc_total_loss: "Find genuine parts from accident damaged vehicles at salvage rates.",
-    card_flood_damaged: "FLOOD DAMAGED CARS",
-    desc_flood_damaged: "Quality body panels, mechanical parts, and alloys from water damaged vehicles.",
-    card_fire_damaged: "FIRE DAMAGED CARS",
-    desc_fire_damaged: "Get affordable undamaged chassis, rear axles, suspension, and wheels.",
-    cat_section_title: "Popular Categories",
-    cat_section_subtitle: "Find the right auto parts for your vehicle",
-    btn_view_all_cat: "View All Categories",
-    cat_engine: "Engine & Mechanical",
-    cat_body: "Body & Exterior",
-    cat_brakes: "Brakes & Discs",
-    cat_electrical: "Electrical & Lighting",
-    cat_suspension: "Suspension & Steering",
-    cat_interior: "Interior & Wheels",
-    cat_cooling: "Cooling & AC",
-    cat_transmission: "Transmission & Clutch",
-    cat_exhaust: "Exhaust & Fuel",
-    cat_more: "Accessories & Oils",
-    trust_1_title: "Verified Sellers",
-    trust_1_sub: "Trusted & genuine sellers across India",
-    trust_2_title: "Best Prices",
-    trust_2_sub: "Great deals on quality parts",
-    trust_3_title: "All India",
-    trust_3_sub: "Buy & sell across India",
-    trust_4_title: "24/7 Support",
-    trust_4_sub: "We’re always here to help you",
-    download_title_p1: "Download",
-    download_title_p2: "AutoParts India",
-    download_title_p3: "App",
-    download_tagline: "India’s Professional Marketplace for New & Used Auto Parts",
-    feat_easy: "Easy Buying & Selling",
-    feat_chat: "Chat with Sellers",
-    feat_free_ads: "Post Ads for Free",
-    feat_nearby: "Find Nearby Sellers",
-    btn_android_free: "ANDROID APPS",
-    btn_download_apk_now: "Download APK Now ↓",
-    box_fast_title: "Instant Parts Search",
-    box_fast_desc: "Directly connect with 10,000+ scrapyards and spare part sellers across all Indian states.",
-    btn_ask_part: "✉ Need a Specific Part? Email Us",
-    footer_desc: "India’s Professional Marketplace for New & Used Auto Parts. Connecting buyers, sellers, and salvage automobile part dealers.",
+    cat_title: "Explore Categories",
+    cat_subtitle: "Find the right auto parts for your vehicle.",
+    cat_engine: "Engine &\nMechanical",
+    cat_body: "Body &\nExterior",
+    cat_brakes: "Brakes &\nDiscs",
+    cat_electrical: "Electrical &\nLighting",
+    cat_suspension: "Suspension &\nSteering",
+    cat_interior: "Interior &\nWheels",
+    damaged_title: "Damaged Vehicles",
+    damaged_subtitle: "Buy & Sell damaged vehicles across India.",
+    damaged_accident: "Accident Damaged",
+    damaged_flood: "Flood Damaged",
+    damaged_fire: "Fire Damaged",
+    trust_1_title: "100% Genuine Parts",
+    trust_1_sub: "Directly from verified sellers & yards",
+    trust_2_title: "All-India Delivery",
+    trust_2_sub: "Shipped to workshops nationwide",
+    trust_3_title: "Best Market Prices",
+    trust_3_sub: "Save up to 60% on OEM & used parts",
+    trust_4_title: "Instant Contact",
+    trust_4_sub: "Call or chat directly with sellers",
+    cta_title: "Get the AutoParts India Mobile App",
+    cta_sub: "Find spare parts for cars, bikes, commercial vehicles, or sell your salvage and damaged vehicles easily on Android.",
+    footer_desc: "India’s trusted digital marketplace connecting vehicle owners, garages, and salvage dealers with genuine auto parts and vehicles nationwide.",
     footer_quick_links: "Quick Links",
-    footer_support: "Support & Info",
-    footer_contact_title: "Contact Us",
-    footer_email_label: "Official Support Email",
-    footer_coverage_label: "Coverage Area",
-    footer_coverage_val: "All States & Cities, India",
-    btn_send_msg: "Send Email to Support",
-    footer_privacy: "Privacy Policy",
-    footer_seller_reg: "Seller Registration",
-    footer_rights: "All rights reserved.",
-    footer_back_top: "↑ Back to Top"
+    footer_support: "Support & Contact"
   },
   hi: {
     nav_home: "होम",
+    nav_categories: "कैटगरीज़",
+    nav_damaged: "डैमेज्ड गाड़ियाँ",
+    nav_listings: "मार्केटप्लेस",
     nav_about: "हमारे बारे में",
-    nav_features: "विशेषताएं",
-    nav_categories: "श्रेणियां",
     nav_contact: "संपर्क",
-    btn_download_apk: "APK डाउनलोड करें",
-    hero_eyebrow: "अखिल भारतीय ऑटोमोटिव मार्केटप्लेस",
-    hero_title_p1: "भारत का विश्वसनीय",
+    btn_download_apk: "डाउनलोड APK",
+    hero_title_p1: "भारत का भरोसेमंद",
     hero_title_p2: "ऑटो पार्ट्स",
-    hero_title_p3: "मार्केटप्लेस",
-    hero_subtitle: "पूरे भारत में सभी वाहनों के लिए नए और पुराने ऑटो पार्ट्स खरीदें और बेचें।",
-    pill_genuine: "असली पार्ट्स",
+    hero_title_and: "और",
+    hero_title_p3: "डैमेज्ड व्हीकल",
+    hero_title_p4: "मार्केटप्लेस",
+    hero_subtitle: "पूरे भारत में नए और पुराने ऑटो पार्ट्स खरीदें और बेचें।",
     pill_verified: "सत्यापित विक्रेता",
-    pill_india: "पूरे भारत में",
-    pill_deals: "सर्वश्रेष्ठ डील",
+    pill_india: "अखिल भारतीय",
+    pill_deals: "बेस्ट डील्स",
     btn_explore: "मार्केटप्लेस देखें",
-    hero_micro: "एंड्रॉइड डिवाइस के लिए • मुफ्त डाउनलोड",
-    mock_location: "📍 पूरे भारत में",
-    mock_search_placeholder: "स्पेयर पार्ट्स, कार मॉडल खोजें...",
-    mock_banner_title: "असली पार्ट्स पर 50% तक की छूट",
-    mock_banner_sub: "पूरे भारत में सत्यापित विक्रेता",
-    mock_banner_btn: "अभी खरीदें",
-    mock_featured: "प्रमुख पार्ट्स",
-    special_title: "विशेष स्थिति वाले वाहन",
-    special_subtitle: "सभी प्रकार के वाहनों से पार्ट्स खोजें और खरीदें",
-    btn_view_all: "सभी देखें",
-    card_total_loss: "टोटल लॉस कारें",
-    desc_total_loss: "दुर्घटनाग्रस्त वाहनों से किफायती दामों पर असली स्पेयर पार्ट्स प्राप्त करें।",
-    card_flood_damaged: "बाढ़ प्रभावित कारें",
-    desc_flood_damaged: "पानी में डूबी कारों से अच्छी स्थिति वाले बॉडी पार्ट्स, इंजन व अलॉय व्हील।",
-    card_fire_damaged: "आग से प्रभावित कारें",
-    desc_fire_damaged: "अग्निकांड प्रभावित वाहनों से सुरक्षित चेसिस, सस्पेंशन व व्हील्स।",
-    cat_section_title: "लोकप्रिय श्रेणियां",
-    cat_section_subtitle: "अपने वाहन के लिए सही ऑटो पार्ट्स खोजें",
-    btn_view_all_cat: "सभी श्रेणियां देखें",
-    cat_engine: "इंजन और मैकेनिकल",
-    cat_body: "बॉडी और एक्सटीरियर",
-    cat_brakes: "ब्रेक और डिस्क",
-    cat_electrical: "इलेक्ट्रिकल और लाइटिंग",
-    cat_suspension: "सस्पेंशन और स्टीयरिंग",
-    cat_interior: "इंटीरियर और व्हील्स",
-    cat_cooling: "कूलिंग और एसी",
-    cat_transmission: "ट्रांसमिशन और क्लच",
-    cat_exhaust: "एग्जॉस्ट और फ्यूल",
-    cat_more: "एक्सेसरीज और ऑयल्स",
-    trust_1_title: "सत्यापित विक्रेता",
-    trust_1_sub: "पूरे भारत में विश्वसनीय और असली विक्रेता",
-    trust_2_title: "सर्वोत्तम मूल्य",
-    trust_2_sub: "गुणवत्तापूर्ण पार्ट्स पर शानदार डील",
-    trust_3_title: "अखिल भारतीय सेवा",
-    trust_3_sub: "भारत भर में खरीदें और बेचें",
-    trust_4_title: "24/7 सहायता",
-    trust_4_sub: "हम हमेशा आपकी मदद के लिए तैयार हैं",
-    download_title_p1: "डाउनलोड करें",
-    download_title_p2: "ऑटोपार्ट्स इंडिया",
-    download_title_p3: "ऐप",
-    download_tagline: "नए और पुराने ऑटो पार्ट्स के लिए भारत का पेशेवर मार्केटप्लेस",
-    feat_easy: "आसान खरीद और बिक्री",
-    feat_chat: "विक्रेताओं से सीधा चैट",
-    feat_free_ads: "मुफ्त में विज्ञापन पोस्ट करें",
-    feat_nearby: "निकटतम विक्रेता खोजें",
-    btn_android_free: "एंड्रॉइड ऐप्स",
-    btn_download_apk_now: "अभी APK डाउनलोड करें ↓",
-    box_fast_title: "त्वरित पार्ट्स खोज",
-    box_fast_desc: "भारत के सभी राज्यों में 10,000+ कबाड़खानों और विक्रेताओं से सीधे जुड़ें।",
-    btn_ask_part: "✉ कोई विशेष पार्ट चाहिए? ईमेल करें",
-    footer_desc: "नए और उपयोग किए गए ऑटो पार्ट्स के लिए भारत का विश्वसनीय मार्केटप्लेस।",
-    footer_quick_links: "त्वरित लिंक्स",
-    footer_support: "सहायता व कानूनी",
-    footer_contact_title: "संपर्क विवरण",
-    footer_email_label: "आधिकारिक सहायता ईमेल",
-    footer_coverage_label: "सेवा क्षेत्र",
-    footer_coverage_val: "भारत के सभी राज्य और शहर",
-    btn_send_msg: "सहायता टीम को ईमेल भेजें",
-    footer_privacy: "गोपनीयता नीति",
-    footer_seller_reg: "विक्रेता पंजीकरण",
-    footer_rights: "सर्वाधिकार सुरक्षित।",
-    footer_back_top: "↑ शीर्ष पर जाएं"
+    cat_title: "कैटगरीज़ देखें",
+    cat_subtitle: "अपने वाहन के लिए सही ऑटो पार्ट्स ढूंढें।",
+    cat_engine: "इंजन और\nमैकेनिकल",
+    cat_body: "बॉडी और\nएक्सटीरियर",
+    cat_brakes: "ब्रेक और\nडिस्क",
+    cat_electrical: "इलेक्ट्रिकल और\nलाइटिंग",
+    cat_suspension: "सस्पेंशन और\nस्टीयरिंग",
+    cat_interior: "इंटीरियर और\nव्हील्स",
+    damaged_title: "डैमेज्ड गाड़ियाँ",
+    damaged_subtitle: "पूरे भारत में डैमेज्ड गाड़ियाँ खरीदें और बेचें।",
+    damaged_accident: "एक्सीडेंट डैमेज्ड",
+    damaged_flood: "बाढ़ प्रभावित",
+    damaged_fire: "आग से डैमेज्ड",
+    trust_1_title: "100% असली पार्ट्स",
+    trust_1_sub: "सीधे सत्यापित विक्रेताओं और यार्ड्स से",
+    trust_2_title: "अखिल भारतीय डिलीवरी",
+    trust_2_sub: "देशभर में वर्कशॉप्स तक शिपिंग",
+    trust_3_title: "सर्वोत्तम बाज़ार मूल्य",
+    trust_3_sub: "OEM और प्रयुक्त पार्ट्स पर 60% तक बचत",
+    trust_4_title: "त्वरित संपर्क",
+    trust_4_sub: "विक्रेताओं से सीधे कॉल या चैट करें",
+    cta_title: "AutoParts India मोबाइल ऐप डाउनलोड करें",
+    cta_sub: "कारों, बाइकों, कमर्शियल वाहनों के पार्ट्स ढूंढें या अपनी स्क्रैप गाड़ियाँ आसानी से बेचें।",
+    footer_desc: "पूरे भारत में वाहन मालिकों, गैरेज और स्क्रैप डीलरों को जोड़ने वाला विश्वसनीय ऑटो पार्ट्स मार्केटप्लेस।",
+    footer_quick_links: "त्वरित लिंक",
+    footer_support: "सहायता और संपर्क"
   }
 };
 
@@ -1601,8 +1498,10 @@ let currentLang = 'en';
 function setLanguage(lang) {
   currentLang = lang;
   document.body.className = lang === 'hi' ? 'lang-hi' : '';
-  document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-lang-hi').classList.toggle('active', lang === 'hi');
+  const btnEn = document.getElementById('btn-lang-en');
+  const btnHi = document.getElementById('btn-lang-hi');
+  if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+  if (btnHi) btnHi.classList.toggle('active', lang === 'hi');
 
   const elements = document.querySelectorAll('[data-i18n]');
   elements.forEach(el => {
@@ -1613,7 +1512,7 @@ function setLanguage(lang) {
   });
 }
 
-// Mobile Nav Toggle
+// Mobile Nav Drawer Toggle
 const menuToggleBtn = document.getElementById('menu-toggle-btn');
 const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
 
@@ -1643,7 +1542,6 @@ function openInChrome(url) {
 function initDownloadLinks() {
   const ua = navigator.userAgent || '';
   const isFb = /FBAN|FBAV|Instagram|FB_IAB/i.test(ua);
-
   const apkUrl = getApkDownloadUrl();
 
   document.querySelectorAll('a[download]').forEach(link => {
